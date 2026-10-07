@@ -1,0 +1,342 @@
+.contact {
+  max-width: 1300px;
+  margin: auto;
+  padding: 110px 30px;
+  position: relative;
+}
+
+.contact-container {
+  max-width: 860px;
+  margin: auto;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.contact-title {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin-bottom: 14px;
+}
+
+.contact-title span {
+  background: linear-gradient(120deg, #61dafb, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-subtitle {
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: auto;
+}
+
+.contact-subtitle strong {
+  color: #61dafb;
+}
+
+.contact-wrapper {
+  background: #11152b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 42px 48px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 40px rgba(97, 218, 251, 0.08);
+  position: relative;
+}
+
+.alert-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.alert-box.success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #86efac;
+}
+
+.alert-box.success .alert-icon {
+  color: #22c55e;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.alert-box.success h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.alert-box.success p {
+  font-size: 13.5px;
+  color: #bbf7d0;
+}
+
+.alert-box.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.alert-box.error .alert-icon {
+  color: #ef4444;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.mailto-fallback-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: #61dafb;
+  font-weight: 600;
+  font-size: 13.5px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #e2e8f0;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.req {
+  color: #ec4899;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field-icon {
+  position: absolute;
+  left: 16px;
+  color: #64748b;
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14.5px;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.input-with-icon input:focus {
+  border-color: #61dafb;
+  background: rgba(97, 218, 251, 0.05);
+  box-shadow: 0 0 16px rgba(97, 218, 251, 0.2);
+}
+
+.services-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.service-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.service-checkbox-label:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(97, 218, 251, 0.3);
+}
+
+.service-checkbox-label.selected {
+  background: rgba(97, 218, 251, 0.08);
+  border-color: #61dafb;
+  box-shadow: 0 0 20px rgba(97, 218, 251, 0.15);
+}
+
+.service-checkbox-label input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox-mark {
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  border: 2px solid #64748b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.service-checkbox-label.selected .checkbox-mark {
+  border-color: #61dafb;
+  background: #61dafb;
+  box-shadow: 0 0 8px rgba(97, 218, 251, 0.55);
+}
+
+.checkbox-check {
+  color: #090b18;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.2s ease;
+}
+
+.service-checkbox-label.selected .checkbox-check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.checkbox-text {
+  color: #cbd5e1;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.service-checkbox-label.selected .checkbox-text {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14.5px;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 120px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+textarea:focus {
+  border-color: #61dafb;
+  background: rgba(97, 218, 251, 0.05);
+  box-shadow: 0 0 16px rgba(97, 218, 251, 0.2);
+}
+
+.form-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 36px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #61dafb, #8b5cf6);
+  color: #090b18;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(97, 218, 251, 0.25);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(97, 218, 251, 0.4);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.direct-mail-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.direct-mail-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  border-color: #61dafb;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    padding: 30px 22px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .services-checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+}
