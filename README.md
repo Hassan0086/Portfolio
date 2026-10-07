@@ -1,222 +1,165 @@
-# Hassan's Portfolio ⚡
+# Muhammad Hassan Ashraf — Portfolio
 
-> Modern, responsive single-page developer portfolio with an **Aurora Dark Theme**, 3D interactive elements, and enterprise project showcases. Built for **Muhammad Hassan Ashraf**, Associate Software Engineer at Axiom World.
+My personal portfolio as Associate Software Engineer at Axiom World, focused on backend engineering, AI/ML, enterprise ERP development, and modern web applications.
 
----
+The portfolio is a responsive React single-page application designed to present my professional profile, engineering capabilities, selected projects, and contact channels through a focused, interactive interface.
 
-## 🌟 Live Demo & Local Preview
+## Live Portfolio
 
-- **Local Preview Server:** `http://localhost:3000/`
-- **Network URL:** `http://192.168.100.47:3000/`
-- **Render Production (Upon Deployment):** Configure following the [Render Deployment Guide](#-deploy--host-on-render-with-cicd) below.
+**Website:** https://portfolio-hassan-zeta.vercel.app/
 
----
+**Repository:** https://github.com/Hassan0086/Portfolio
 
-## 🎨 Design Philosophy: 70% Reference + 30% Original Work
+## Overview
 
-This portfolio was designed adhering strictly to the **70% reference match + 30% original engineering** principle:
+This portfolio is built around a simple principle: the interface should communicate engineering capability without turning the portfolio itself into an unnecessarily complex application.
 
-### 70% Reference Consistency (Visual Aesthetic & Core Layout)
-- **Aurora Dark Theme**: Deep space backdrop (`#090b18` / `#060814`), neon cyan (`#61dafb`), electric purple (`#8b5cf6`), and soft pink accents.
-- **Hovering 3D Glassmorphism Navbar**: Floating pill capsule fixed at the top with backdrop blur, subtle glow, glowing status dot, and responsive mobile drawer.
-- **Interactive 3D Tilt Code Terminal**: Hero section terminal window with macOS traffic lights that calculates mouse distance and rotates in 3D perspective (`perspective(1200px)`).
-- **Two-Column About Layout**: Personal narrative on the left, dual cards for Education and Interactive Interests tags on the right.
-- **Featured Project Ribbon**: Angled `-45deg` gradient `FEATURED` ribbon banner spotlighting the Final Year Project (ReMIND).
+It combines:
 
-### 30% Original Engineering & Custom Value-Adds
-1. **Interactive Service Modals**:
-   - Every service title/card is clickable, opening an in-depth capability modal with architecture diagrams, feature lists, and direct open-source references.
-   - Clickable badges for every underlying technology leading directly to official/open-source documentation (e.g., [python.org](https://www.python.org/), [fastapi.tiangolo.com](https://fastapi.tiangolo.com/), [odoo.com](https://www.odoo.com/)).
-   - "Request This Service" button inside the modal that auto-selects the radio button in the Contact section and smoothly navigates the user there.
-2. **Production Odoo 19 ERP Showcase**:
-   - Detailed showcase of the Odoo 19 Hostel Management Module alongside the ReMIND multimodal AI FYP, highlighting real-time SQL view dashboards, cron automations, QWeb reports, and multi-company security.
-3. **Automated Contact Form to `hassan.ashraf12@gmail.com`**:
-   - Zero-backend serverless form submission using Web3Forms / Formspree API directly to `hassan.ashraf12@gmail.com`.
-   - Automatic 1-click fallback pre-filled mail client (`mailto:`) ensuring inquiries never fail even under offline/restricted networks.
-   - Required fields: Email, Phone Number, Service Selection (radio grid), and Message.
-4. **Active Section Scroll Tracking**:
-   - Navbar dynamically highlights the section currently in viewport as the user scrolls.
+- A responsive single-page React architecture
+- A dark Aurora-inspired visual system
+- Interactive 3D UI elements and transitions
+- Data-driven service and project sections
+- Detailed service capability modals
+- Direct links to technology documentation
+- A production-oriented contact workflow
+- Responsive layouts for desktop, tablet, and mobile
+- Vercel deployment configuration
+- Environment-based configuration for external form services
 
----
+The implementation keeps presentation, content data, and application state separated where practical, allowing services and projects to be maintained independently from their UI components.
 
-## 🛠️ Tech Stack & Architecture
+## Engineering Focus
 
-- **Core**: React 18, HTML5, Modern CSS3
-- **Build Tool**: Vite (blazing fast builds and HMR)
-- **Icons**: `react-icons` (FontAwesome 5 & 6)
-- **Routing & State**: React Hooks (`useState`, `useEffect`, `useRef`), SPA section scrolling
-- **Architecture**: Follows **SOLID principles**:
-  - *Single Responsibility*: UI presentation separated from data files (`servicesData.js`, `projectsData.js`).
-  - *Open/Closed*: New services and projects can be appended to data files without touching component layout code.
-  - *Dependency Inversion*: Forms and modals receive actions and data via explicit props.
+The portfolio represents the areas in which I currently work and build:
 
----
+### Backend Engineering
+- Python-based backend systems
+- RESTful API development
+- FastAPI and Flask
+- PostgreSQL and MySQL
+- Authentication with OAuth2 and JWT
+- Third-party integrations and webhooks
+- Relational data modelling and query optimisation
 
-## 📂 Project Structure
+### AI/ML Engineering
+- Machine learning workflows
+- PyTorch, NumPy, and Scikit-Learn
+- Model training and evaluation
+- Feature engineering and data processing
+- Neural-network and transfer-learning workflows
 
-```
-portfolio/
-├── .env                     # Environment variables (local)
-├── .env.example             # Template for secrets and endpoints
-├── .gitignore               # Ignored files (node_modules, build, etc.)
-├── .github/
-│   └── workflows/
-│       ├── ci.yml           # Automated build and artifact upload on push
-│       └── cd.yml           # Continuous deployment trigger for Render
-├── index.html               # Main HTML entry with Google Fonts
-├── package.json             # NPM package scripts and dependencies
-├── vite.config.js           # Vite configuration (outDir: 'build', port: 3000)
-├── README.md                # Project documentation and guide
-└── src/
-    ├── main.jsx             # React DOM root render
-    ├── App.jsx              # Main SPA container & state orchestration
-    ├── index.css            # Global CSS reset & Aurora CSS variables
-    ├── data/
-    │   ├── servicesData.js  # 6 Services, descriptions, open-source links
-    │   └── projectsData.js  # ReMIND and Odoo module details
-    ├── components/
-    │   ├── Navbar.jsx       # 3D floating pill navigation + mobile menu
-    │   ├── Navbar.css
-    │   ├── ServiceModal.jsx # Detailed modal for service specs
-    │   ├── ServiceModal.css
-    │   ├── Footer.jsx       # Footer with back-to-top and copyright
-    │   └── Footer.css
-    ├── pages/
-    │   ├── Home.jsx         # Hero section + 3D code card + stats
-    │   ├── About.jsx        # Bio + Axiom World role + UCP education
-    │   ├── Services.jsx     # Service cards with clickable tech links
-    │   ├── Projects.jsx     # ReMIND FYP (Featured) & Odoo ERP module
-    │   ├── Contact.jsx      # Form sending to hassan.ashraf12@gmail.com
-    │   └── Social.jsx       # 3D interactive social connection cards
-    └── styles/
-        ├── Home.css
-        ├── About.css
-        ├── Services.css
-        ├── Projects.css
-        ├── Contact.css
-        └── Social.css
-```
+### Generative AI & Intelligent Systems
+- Large Language Models
+- Retrieval-Augmented Generation (RAG)
+- Vector search with FAISS
+- Natural Language Processing
+- Speech-to-Text and Text-to-Speech
+- Multimodal AI pipelines
+- Image processing and enhancement
 
----
+### Enterprise ERP & Odoo
+- Odoo module development
+- Python ORM and business models
+- XML views and business workflows
+- SQL view-based analytics
+- Automated scheduled actions
+- Server actions
+- QWeb PDF reporting
+- XLSX reporting and export workflows
+- Access rights and multi-company security
 
-## 🚀 Getting Started Locally
+### DevOps & Delivery
+- Git and GitHub
+- GitHub Actions
+- Docker-based workflows
+- CI/CD concepts
+- Deployment automation
+- Vercel deployment configuration
 
-### 1. Clone the repository
-```bash
-git clone <your-repo-url>
-cd portfolio
-```
+### Frontend Engineering
+- React
+- JavaScript
+- HTML5
+- CSS3
+- Responsive UI development
+- Component-driven architecture
+- Interactive interfaces and client-side state management
 
-### 2. Install dependencies
-```bash
-npm install
-```
+## Selected Work
 
-### 3. Configure environment variables
-Copy `.env.example` to `.env`:
-```bash
-cp .env.example .env
-```
-*(Optional: add your free [Web3Forms](https://web3forms.com) access key to enable zero-backend API email delivery).*
+### ReMIND — Final Year Project
 
-### 4. Run the development server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+**Generative AI Based Memory Rebuilder**
 
-### 5. Build for production
-```bash
-npm run build
-```
-Builds the static application to the `build/` directory.
+ReMIND is a multimodal AI application developed as a Final Year Project to reconstruct fragmented memories using text, images, and voice input. The system combines AI models, speech technologies, image processing, retrieval-based techniques, and backend orchestration to generate contextual memory narratives.
 
-### 6. Preview production build locally
-```bash
-npm run preview
-```
+**Technologies:** React, FastAPI, Groq, LLMs, RAG, FAISS, PostgreSQL, Neon, OAuth2, JWT, Real-ESRGAN, GFPGAN, BLIP, ElevenLabs, gTTS, Docker, CI/CD
 
----
+**Source:** https://github.com/Hassan0086/ReMIND-Project
 
-## 📬 Contact Form: Best Free Connection to Email
+### Odoo 19 Hostel Management Module
 
-The contact form is configured to send all submissions (Email, Phone, Selected Service, Message) to **`hassan.ashraf12@gmail.com`**.
+An enterprise-oriented Odoo 19 module covering hostel, room, student, admission, discharge, transfer, and complaint workflows.
 
-### Recommended Free Methods:
-1. **Web3Forms (Pre-configured in code)**:
-   - Go to [web3forms.com](https://web3forms.com) and enter `hassan.ashraf12@gmail.com`.
-   - You will immediately receive a free Access Key in your inbox.
-   - Paste the key in your `.env`:
-     ```env
-     VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
-     ```
-   - All submissions will land directly in your Gmail inbox!
-2. **Instant Pre-filled Mailto (Built-in Fallback)**:
-   - If no API key is supplied or if network connection fails, the user is offered a 1-click button to open their mail client with all fields pre-populated addressed directly to `hassan.ashraf12@gmail.com`.
+The implementation includes SQL view-based analytics, automated scheduled actions, server actions, QWeb PDF reports, XLSX export workflows, and multi-company security isolation.
 
----
+**Technologies:** Odoo 19, Python, PostgreSQL, XML, QWeb, SCSS, XlsxWriter, wkhtmltopdf, Git
 
----
+**Source:** https://github.com/Hassan0086/Odoo-Module-Hostel-Management
 
-## 🌐 Deploy & Host on Vercel with CI/CD
+## Application Architecture
 
-### Step 1: Deploy on Vercel (1-Click Setup)
+The project uses a lightweight React architecture appropriate for a portfolio application.
 
-1. Go to [vercel.com](https://vercel.com) and log in with your GitHub account (`Hassan0086`).
-2. Click **Add New...** → **Project**.
-3. Import your repository: **`Hassan0086/Portfolio`**.
-4. Vercel automatically detects the configuration via `vercel.json`:
-   - **Framework Preset:** `Vite`
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `build`
-5. Under **Environment Variables**, add:
-   - `VITE_CONTACT_EMAIL` = `hassan.ashraf12@gmail.com`
-   - `VITE_WEB3FORMS_ACCESS_KEY` = *(paste your key once generated in Step 3)*
-6. Click **Deploy**. In ~30 seconds, your site is live at `https://portfolio-hassan0086.vercel.app` (or your assigned Vercel URL)!
+### Core Structure
 
----
+- `App.jsx` — application composition and shared service-selection state
+- `components/` — reusable interface components such as navigation, service modals, and footer
+- `pages/` — primary portfolio sections
+- `data/` — structured service and project content
+- `styles/` — section-specific styling
+- `index.css` — global styles and shared visual foundations
+- `vite.config.js` — Vite development and build configuration
+- `vercel.json` — Vercel build and SPA rewrite configuration
 
-### Step 2: Add Vercel Deploy Hook in `.env`
+### Design Principles
 
-1. In your Vercel Project Dashboard, navigate to **Settings** → **Git**.
-2. Scroll to the **Deploy Hooks** section.
-3. Create a new hook:
-   - **Hook Name:** `Portfolio Deploy Hook`
-   - **Branch:** `main`
-4. Click **Create Hook** and copy the generated webhook URL:
-   `https://api.vercel.com/v1/integrations/deploy/prj_xxxxxx/xxxxxx`
-5. Save this URL in your local `.env`:
-   ```env
-   VERCEL_DEPLOY_HOOK=https://api.vercel.com/v1/integrations/deploy/prj_xxxxxx/xxxxxx
-   ```
-6. *(Optional for GitHub Actions CI/CD)*: In your GitHub repo **Settings** → **Secrets and variables** → **Actions**, add a new secret `VERCEL_DEPLOY_HOOK` with this URL.
+The implementation follows practical software engineering principles rather than introducing abstractions solely for abstraction's sake:
 
----
+- **Separation of concerns:** service and project content are maintained in dedicated data modules instead of being embedded throughout presentation components.
+- **Component reuse:** navigation, service details, and footer behaviour are isolated into focused components.
+- **Explicit state flow:** shared service selection is passed through the application where it is required instead of introducing unnecessary global state.
+- **Data-driven rendering:** services and projects are rendered from structured definitions, making content changes predictable and localised.
+- **Progressive fallback:** the contact workflow provides a direct email fallback when the external form service is unavailable or not configured.
+- **Responsive behaviour:** layout and interaction rules adapt across desktop, tablet, and mobile screen sizes.
 
-### Step 3: Register on Web3Forms with Your Vercel Website URL
+## Technology Stack
 
-1. Go to [web3forms.com](https://web3forms.com).
-2. Enter your email: **`hassan.ashraf12@gmail.com`**.
-3. Enter your deployed website URL: **`https://portfolio-hassan0086.vercel.app`** (or your exact Vercel domain).
-4. Click **Create Access Key** / **Submit**.
-5. Check your Gmail inbox (`hassan.ashraf12@gmail.com`) for the free Access Key (e.g. `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`).
-6. Add the key in your local `.env`:
-   ```env
-   VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
-   ```
-7. Also add `VITE_WEB3FORMS_ACCESS_KEY` in Vercel **Settings** → **Environment Variables** so production form submissions work seamlessly without any server.
+| Area | Technologies |
+| --- | --- |
+| UI | React 18, HTML5, CSS3 |
+| Build | Vite |
+| Language | JavaScript / JSX |
+| Icons | React Icons |
+| State | React Hooks |
+| Backend/API Integration | Web3Forms |
+| Deployment | Vercel |
+| Automation | GitHub Actions |
+| Version Control | Git / GitHub |
 
+## Contact
 
----
+I am open to professional conversations, engineering collaborations, software projects, and opportunities related to backend development, AI/ML, enterprise Odoo development, and related engineering work.
 
-## 👤 Author
+- **Email:** hassan.ashraf12@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/muhammad-hassan-ashraf0086/
+- **GitHub:** https://github.com/Hassan0086
 
-**Muhammad Hassan Ashraf**  
-Associate Software Engineer @ Axiom World  
-- 📧 Email: [hassan.ashraf12@gmail.com](mailto:hassan.ashraf12@gmail.com)  
-- 💼 LinkedIn: [muhammad-hassan-ashraf0086](https://www.linkedin.com/in/muhammad-hassan-ashraf0086/)  
-- 🐙 GitHub: [Hassan0086](https://github.com/Hassan0086/ReMIND-Project)  
+## License
 
----
+This project is intended to be released under the **MIT License**.
 
-*Licensed under the MIT License.*
+MIT License: https://opensource.org/license/mit/
+
+If the repository does not yet contain a `LICENSE` file, the standard MIT license text should be added as `LICENSE` at the repository root to make the license explicit in the repository itself.
